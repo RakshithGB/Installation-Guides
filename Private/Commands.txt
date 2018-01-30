@@ -1,0 +1,6 @@
+cmake -D CMAKE_BUILD_TYPE=RELEASE \ -D CMAKE_INSTALL_PREFIX=/usr/local \ -D INSTALL_PYTHON_EXAMPLES=ON \ -D INSTALL_C_EXAMPLES=OFF \-D OPENCV_EXTRA_MODULES_PATH=~/home/rajesh/OpenCV/opencv_contrib-3.3.1/modules \ -D BUILD_opencv_python2=OFF -D PYTHON_EXECUTABLE=~/home/rajesh/miniconda3/bin/python3 \ -D BUILD_EXAMPLES=ON ..
+
+
+cmake -D CMAKE_BUILD_TYPE=Release -D CMAKE_INSTALL_PREFIX=/usr/local -D OPENCV_EXTRA_MODULES_PATH=/home/rakshith/OpenCV/opencv_contrib-3.4.0/modules -D WITH_CUDA=ON -D CUDA_GENERATION=Auto -D WITH_CUBLAS=ON -D WITH_TBB=ON -D WITH_V4L=ON -D WITH_QT=ON -D WITH_OPENGL=ON -D BUILD_PERF_TESTS=OFF -D BUILD_TESTS=OFF -DCUDA_NVCC_FLAGS="-D_FORCE_INLINES" -D ENABLE_FAST_MATH=1 -D CUDA_FAST_MATH=1 -D BUILD_opencv_python2=OFF -D BUILD_opencv_python3=ON -D PYTHON_DEFAULT_EXECUTABLE=/home/rakshith/miniconda3/bin/python3.6 -D PYTHON3_INCLUDE_DIR=/home/rakshith/miniconda3/include/python3.6m -D PYTHON3_LIBRARY=/home/rakshith/miniconda3/lib/libpython3.6m.so -D PYTHON3_PACKAGES_PATH=/home/rakshith/miniconda3/lib/python3.6/site-packages ..
+
+bazel build --config=opt --config=cuda --incompatible_load_argument_is_label=false //tensorflow/tools/pip_package:build_pip_package
